@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Adarsh | Video Editor</title>
+<title>Adarsh Chaudhary | Video Editor</title>
 
 <style>
-body {
+body{
   margin:0;
-  font-family: Arial;
+  font-family:Arial, sans-serif;
   background:#0d0d0d;
   color:white;
-  overflow-x:hidden;
 }
 
 /* HERO */
-.hero {
+.hero{
   height:100vh;
   display:flex;
   flex-direction:column;
@@ -23,96 +22,142 @@ body {
   text-align:center;
 }
 
-.hero img {
-  width:140px;
+.hero img{
+  width:130px;
   border-radius:50%;
-  transform:scale(0.5);
-  animation:zoomIn 1s forwards;
+  animation:zoom 1s ease;
 }
 
-.hero h1 {
-  opacity:0;
-  transform:translateY(50px);
-  animation:slideUp 1s forwards 0.5s;
+.hero h1{
+  margin:10px 0;
+  font-size:42px;
+  animation:slide 1s ease;
 }
 
-.hero p {
-  opacity:0;
-  animation:fadeIn 1s forwards 1s;
-}
-
-/* VIDEO GRID */
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:20px;
-  padding:40px;
-}
-
-iframe {
-  width:100%;
-  height:200px;
-  border-radius:10px;
-  opacity:0;
-  transform:scale(0.8);
-  transition:0.5s;
-}
-
-iframe.show {
-  opacity:1;
-  transform:scale(1);
+.hero p{
+  color:#aaa;
+  animation:fade 2s;
 }
 
 /* BUTTON */
-.btn {
+.btn{
+  margin-top:15px;
   padding:10px 20px;
   background:#f4c430;
   color:black;
   text-decoration:none;
   border-radius:5px;
-  margin-top:20px;
 }
 
-/* ANIMATIONS */
-@keyframes slideUp {
-  to {
-    opacity:1;
-    transform:translateY(0);
-  }
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+  padding:40px;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity:1;
-  }
+.video{
+  position:relative;
+  padding-bottom:56.25%;
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.6s;
 }
 
-@keyframes zoomIn {
-  to {
-    transform:scale(1);
-  }
+.video iframe{
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:10px;
+}
+
+/* SHOW ANIMATION */
+.video.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* SECTION */
+.section{
+  text-align:center;
+  padding:40px;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:20px;
+  color:#777;
+}
+
+/* ANIMATION */
+@keyframes zoom{
+  from{transform:scale(0);}
+  to{transform:scale(1);}
+}
+
+@keyframes slide{
+  from{transform:translateY(50px);opacity:0;}
+  to{transform:translateY(0);opacity:1;}
+}
+
+@keyframes fade{
+  from{opacity:0;}
+  to{opacity:1;}
 }
 </style>
-
 </head>
 
 <body>
 
+<!-- HERO -->
 <div class="hero">
   <img src="https://i.postimg.cc/s2Q16VFr/image.jpg">
   <h1>Adarsh Chaudhary</h1>
-  <p>Video Editor | Reels | Ads</p>
+  <p>Video Editor | Reels | Ads | YouTube</p>
   <a class="btn" href="https://wa.me/917827114359">Hire Me</a>
 </div>
 
+<!-- WORK -->
+<div class="section">
+  <h2>🎬 My Work</h2>
+</div>
+
 <div class="grid">
-  <iframe src="https://www.youtube.com/embed/Ek-HMXJbPEo"></iframe>
-  <iframe src="https://www.youtube.com/embed/rX6_QncJ1zo"></iframe>
-  <iframe src="https://www.youtube.com/embed/NMMxot9Wlsc"></iframe>
+
+<div class="video"><iframe src="https://www.youtube.com/embed/MV8CF3CVyOY"></iframe></div>
+<div class="video"><iframe src="https://www.youtube.com/embed/hvAdQSFQPTE"></iframe></div>
+<div class="video"><iframe src="https://www.youtube.com/embed/-d63E4JcLMc"></iframe></div>
+<div class="video"><iframe src="https://www.youtube.com/embed/4pii7z3uINE"></iframe></div>
+<div class="video"><iframe src="https://www.youtube.com/embed/trnLL2pRXgE"></iframe></div>
+<div class="video"><iframe src="https://www.youtube.com/embed/7OmYmkwC0AY"></iframe></div>
+<div class="video"><iframe src="https://www.youtube.com/embed/ziI0JY3OWQE"></iframe></div>
+<div class="video"><iframe src="https://www.youtube.com/embed/TXwJ0dyt6Rw"></iframe></div>
+<div class="video"><iframe src="https://www.youtube.com/embed/LeO8N3OVhfw"></iframe></div>
+
+</div>
+
+<!-- MORE -->
+<div class="section">
+  <h2>📱 More Work</h2>
+  <a class="btn" href="https://www.instagram.com/reel/DOvQuDfEzXS/" target="_blank">View Reel 1</a><br><br>
+  <a class="btn" href="https://www.instagram.com/reel/DUTBxHGkjK0/" target="_blank">View Reel 2</a>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+  <h2>About Me</h2>
+  <p>Creative freelance video editor with 4+ years of experience creating reels, ads and engaging content. I focus on storytelling, smooth transitions and professional edits.</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 Adarsh Chaudhary
 </div>
 
 <script>
-const videos = document.querySelectorAll("iframe");
+const videos = document.querySelectorAll(".video");
 
 window.addEventListener("scroll", () => {
   videos.forEach(v => {
