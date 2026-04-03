@@ -20,56 +20,47 @@ body {
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  opacity:0;
-  transform:translateY(50px);
-  animation:fadeUp 1s forwards;
+  text-align:center;
 }
 
 .hero img {
   width:140px;
   border-radius:50%;
+  transform:scale(0.5);
+  animation:zoomIn 1s forwards;
 }
 
 .hero h1 {
-  margin:15px 0;
-  font-size:50px;
+  opacity:0;
+  transform:translateY(50px);
+  animation:slideUp 1s forwards 0.5s;
 }
 
 .hero p {
-  color:#aaa;
-}
-
-/* SECTION */
-.section {
-  padding:80px 20px;
-  text-align:center;
   opacity:0;
-  transform:translateY(50px);
-  transition:1s;
+  animation:fadeIn 1s forwards 1s;
 }
 
-.section.show {
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* GRID */
+/* VIDEO GRID */
 .grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
   gap:20px;
-  padding:20px;
+  padding:40px;
 }
 
 iframe {
   width:100%;
   height:200px;
   border-radius:10px;
-  transition:0.3s;
+  opacity:0;
+  transform:scale(0.8);
+  transition:0.5s;
 }
 
-iframe:hover {
-  transform:scale(1.05);
+iframe.show {
+  opacity:1;
+  transform:scale(1);
 }
 
 /* BUTTON */
@@ -79,13 +70,26 @@ iframe:hover {
   color:black;
   text-decoration:none;
   border-radius:5px;
+  margin-top:20px;
 }
 
-/* ANIMATION */
-@keyframes fadeUp {
+/* ANIMATIONS */
+@keyframes slideUp {
   to {
     opacity:1;
     transform:translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity:1;
+  }
+}
+
+@keyframes zoomIn {
+  to {
+    transform:scale(1);
   }
 }
 </style>
@@ -101,33 +105,20 @@ iframe:hover {
   <a class="btn" href="https://wa.me/917827114359">Hire Me</a>
 </div>
 
-<div class="section">
-  <h2>🎬 My Work</h2>
-  <div class="grid">
-    <iframe src="https://www.youtube.com/embed/Ek-HMXJbPEo"></iframe>
-    <iframe src="https://www.youtube.com/embed/rX6_QncJ1zo"></iframe>
-    <iframe src="https://www.youtube.com/embed/NMMxot9Wlsc"></iframe>
-  </div>
-</div>
-
-<div class="section">
-  <h2>📱 More Work</h2>
-  <a class="btn" href="https://www.instagram.com/reel/DOvQuDfEzXS/">View Reel</a>
-</div>
-
-<div class="section">
-  <h2>About Me</h2>
-  <p>Creative video editor with 4+ years experience in reels and ads.</p>
+<div class="grid">
+  <iframe src="https://www.youtube.com/embed/Ek-HMXJbPEo"></iframe>
+  <iframe src="https://www.youtube.com/embed/rX6_QncJ1zo"></iframe>
+  <iframe src="https://www.youtube.com/embed/NMMxot9Wlsc"></iframe>
 </div>
 
 <script>
-const sections = document.querySelectorAll('.section');
+const videos = document.querySelectorAll("iframe");
 
-window.addEventListener('scroll', () => {
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
+window.addEventListener("scroll", () => {
+  videos.forEach(v => {
+    const top = v.getBoundingClientRect().top;
     if(top < window.innerHeight - 100){
-      sec.classList.add('show');
+      v.classList.add("show");
     }
   });
 });
