@@ -1,22 +1,154 @@
-<!DOCTYPE html>
-<html>
+ <!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Adarsh Portfolio</title>
+<meta charset="UTF-8">
+<title>Adarsh Chaudhary | Video Editor</title>
+
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body {
+  font-family: Arial;
+  background:#0d0d0d;
+  color:white;
+}
+
+/* HERO */
+.hero {
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+}
+
+.hero img {
+  width:150px;
+  border-radius:50%;
+  margin-bottom:20px;
+}
+
+.hero h1 {
+  font-size:50px;
+}
+
+.hero p {
+  color:#aaa;
+}
+
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+  gap:20px;
+  padding:40px;
+}
+
+.grid iframe {
+  width:100%;
+  height:220px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.grid iframe:hover {
+  transform:scale(1.05);
+}
+
+/* SECTION */
+.section {
+  padding:60px;
+  text-align:center;
+}
+
+.yellow {
+  height:4px;
+  width:100px;
+  background:#f4c430;
+  margin:10px auto;
+}
+
+/* CONTACT */
+.contact a {
+  color:#f4c430;
+  font-size:18px;
+  text-decoration:none;
+}
+
+/* BUTTON */
+.btn {
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 20px;
+  background:#f4c430;
+  color:black;
+  border-radius:5px;
+}
+
+/* FOOTER */
+.footer {
+  text-align:center;
+  padding:20px;
+  color:#777;
+}
+</style>
+
 </head>
 
-<body style="background:black; color:white; text-align:center; font-family:sans-serif;">
+<body>
 
-<h1>Adarsh Chaudhary</h1>
-<p>Video Editor Portfolio</p>
+<!-- HERO -->
+<div class="hero">
+  <img src="https://i.postimg.cc/s2Q16VFr/image.jpg">
+  <h1>Adarsh Chaudhary</h1>
+  <div class="yellow"></div>
+  <p>Video Editor | Reels | Ads | YouTube</p>
+  <a class="btn" href="https://wa.me/917827114359">Hire Me</a>
+</div>
 
-<h2>🎬 Showreel</h2>
+<!-- PORTFOLIO -->
+<div class="section">
+  <h2>🎬 My Work</h2>
+  <div class="yellow"></div>
+</div>
 
-<iframe width="80%" height="300"
-src="https://www.youtube.com/embed/YOUR_VIDEO_LINK">
-</iframe>
+<div class="grid">
+  <iframe src="https://www.youtube.com/embed/Ek-HMXJbPEo"></iframe>
+  <iframe src="https://www.youtube.com/embed/rX6_QncJ1zo"></iframe>
+  <iframe src="https://www.youtube.com/embed/NMMxot9Wlsc"></iframe>
+</div>
 
-<h2>📞 Contact</h2>
-<p>WhatsApp: https://wa.me/917827114359</p>
+<!-- INSTAGRAM -->
+<div class="section">
+  <h2>📱 More Work</h2>
+  <div class="yellow"></div>
+  <a class="btn" href="https://www.instagram.com/reel/DOvQuDfEzXS/" target="_blank">View Reel 1</a><br><br>
+  <a class="btn" href="https://www.instagram.com/reel/DUTBxHGkjK0/" target="_blank">View Reel 2</a>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+  <h2>About Me</h2>
+  <div class="yellow"></div>
+  <p>Creative Freelance Video Editor with 4+ years of experience creating high-quality reels, ads and engaging content. Skilled in storytelling and professional editing.</p>
+</div>
+
+<!-- CONTACT -->
+<div class="section contact">
+  <h2>Contact</h2>
+  <div class="yellow"></div>
+  <a href="https://wa.me/917827114359">WhatsApp Me</a>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 Adarsh Chaudhary | Video Editor
+</div>
 
 </body>
 </html>
